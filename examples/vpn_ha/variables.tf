@@ -17,21 +17,25 @@
 variable "prod_project_id" {
   description = "Production Project ID."
   type        = string
+  default = "project1-330918"
 }
 
 variable "prod_network_self_link" {
   description = "Production Network Self Link."
   type        = string
+  default = "https://www.googleapis.com/compute/v1/projects/project1-330918/global/networks/preexisting1-project1"
 }
 
 variable "mgt_project_id" {
   description = "Management Project ID."
   type        = string
+  default = "project2-330918"
 }
 
 variable "mgt_network_self_link" {
   description = "Management Network Self Link."
   type        = string
+  default = "https://www.googleapis.com/compute/v1/projects/project2-330918/global/networks/preexisting2-project2"
 }
 
 variable "region" {
