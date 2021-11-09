@@ -21,7 +21,7 @@ module "vpn-hub-to-spoke1" {
   region           = var.region
   network          = var.hub_network_self_link
   name             = "hub-to-spoke1"
-  peer_gcp_gateway = module.vpn-ha-to-hub.self_link
+  peer_gcp_gateway = module.vpn-hub-to-spoke1.self_link
   router_asn       = 64514
   tunnels = {
     remote-0 = {

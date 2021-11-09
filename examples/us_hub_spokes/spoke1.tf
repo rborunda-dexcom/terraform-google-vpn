@@ -15,14 +15,14 @@
  */
 
 ##To MGMT VPC
-module "vpn-ha-to-hub" {
+module "vpn-spoke1-to-hub" {
   source           = "../../modules/vpn_ha"
   project_id       = var.spoke1_project_id
   region           = var.region
   network          = var.spoke1_network_self_link
   name             = "prod-to-mgmt"
   router_asn       = 64513
-  peer_gcp_gateway = module.vpn-ha-to-spoke1.self_link
+  peer_gcp_gateway = module.vpn-hub-to-spoke1.self_link
   tunnels = {
     remote-0 = {
       bgp_peer = {
@@ -34,7 +34,7 @@ module "vpn-ha-to-hub" {
       ike_version                     = 2
       vpn_gateway_interface           = 0
       peer_external_gateway_interface = null
-      shared_secret                   = module.vpn-ha-to-spoke1.random_secret
+      shared_secret                   = module.vpn-spoke1-to-hub.random_secret
     }
     remote-1 = {
       bgp_peer = {
@@ -46,7 +46,7 @@ module "vpn-ha-to-hub" {
       ike_version                     = 2
       vpn_gateway_interface           = 1
       peer_external_gateway_interface = null
-      shared_secret                   = module.vpn-ha-spoke1.random_secret
+      shared_secret                   = module.vpn-spoke1-to-hub.random_secret
     }
   }
 }
