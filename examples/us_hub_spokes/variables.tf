@@ -17,25 +17,25 @@
 variable "spoke1_project_id" {
   description = "Spoke1 Project ID."
   type        = string
-  default = "us-hub"
+  default = "us-spoke1"
 }
 
 variable "spoke1_network_self_link" {
   description = "Spoke1 Network Self Link."
   type        = string
-  default = "https://www.googleapis.com/compute/v1/projects/project1-330918/global/networks/preexisting1-project1"
+  default = "https://www.googleapis.com/compute/v1/projects/us-spoke1/global/networks/spoke1-network"
 }
 
 variable "hub_project_id" {
   description = "Management Project ID."
   type        = string
-  default = "project2-330918"
+  default = "	us-hub"
 }
 
 variable "hub_network_self_link" {
   description = "HUB Network Self Link."
   type        = string
-  default = "https://www.googleapis.com/compute/v1/projects/project2-330918/global/networks/preexisting2-project2"
+  default = "https://www.googleapis.com/compute/v1/projects/us-hub/global/networks/hub-network"
 }
 
 variable "region" {
