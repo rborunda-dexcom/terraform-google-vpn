@@ -29,7 +29,7 @@ variable "spoke1_network_self_link" {
 variable "hub_project_id" {
   description = "Management Project ID."
   type        = string
-  default = "	us-hub"
+  default = "us-hub"
 }
 
 variable "hub_network_self_link" {
