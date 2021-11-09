@@ -50,3 +50,41 @@ module "vpn-hub-to-spoke1" {
     }
   }
 }
+
+
+
+module "vpn-hub-to-spoke2" {
+  source           = "../../modules/vpn_ha"
+  project_id       = var.hub_project_id
+  region           = var.region
+  network          = var.hub_network_self_link
+  name             = "hub-to-spoke2"
+  peer_gcp_gateway = module.vpn-spoke2-to-hub.self_link
+  router_asn       = 64514
+  tunnels = {
+    remote-0 = {
+      bgp_peer = {
+        address = "169.254.1.6"
+        asn     = 64515
+      }
+      bgp_peer_options                = null
+      bgp_session_range               = "169.254.1.4/30"
+      ike_version                     = 2
+      vpn_gateway_interface           = 0
+      peer_external_gateway_interface = null
+      shared_secret                   = ""
+    }
+    remote-1 = {
+      bgp_peer = {
+        address = "169.254.2.6"
+        asn     = 64515
+      }
+      bgp_peer_options                = null
+      bgp_session_range               = "169.254.2.4/30"
+      ike_version                     = 2
+      vpn_gateway_interface           = 1
+      peer_external_gateway_interface = null
+      shared_secret                   = ""
+    }
+  }
+}
