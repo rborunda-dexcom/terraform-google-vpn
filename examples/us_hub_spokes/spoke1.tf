@@ -34,7 +34,7 @@ module "vpn-ha-to-hub" {
       ike_version                     = 2
       vpn_gateway_interface           = 0
       peer_external_gateway_interface = null
-      shared_secret                   = module.vpn-ha-to-prod.random_secret
+      shared_secret                   = module.vpn-ha-to-spoke1.random_secret
     }
     remote-1 = {
       bgp_peer = {
@@ -46,7 +46,7 @@ module "vpn-ha-to-hub" {
       ike_version                     = 2
       vpn_gateway_interface           = 1
       peer_external_gateway_interface = null
-      shared_secret                   = module.vpn-ha-to-prod.random_secret
+      shared_secret                   = module.vpn-ha-spoke1.random_secret
     }
   }
 }

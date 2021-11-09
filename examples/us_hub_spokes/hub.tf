@@ -15,7 +15,7 @@
  */
 
 ##To Prod VPC
-module "hub-to-spoke1" {
+module "vpn-hub-to-spoke1" {
   source           = "../../modules/vpn_ha"
   project_id       = var.hub_project_id
   region           = var.region
