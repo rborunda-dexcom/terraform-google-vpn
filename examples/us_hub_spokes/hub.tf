@@ -51,7 +51,7 @@ module "vpn-hub-to-spoke1" {
   }
 }
 
-
+/*
 
 module "vpn-hub-to-spoke2" {
   source           = "../../modules/vpn_ha"
@@ -88,3 +88,5 @@ module "vpn-hub-to-spoke2" {
     }
   }
 }
+
+*/

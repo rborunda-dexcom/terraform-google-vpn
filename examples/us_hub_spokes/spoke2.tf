@@ -16,7 +16,7 @@
 
 ##To MGMT VPC
 
-
+/*
 
   module "vpn-spoke2-to-hub" {
     source           = "../../modules/vpn_ha"
@@ -54,4 +54,4 @@
     }
   }
 
-
+*/
