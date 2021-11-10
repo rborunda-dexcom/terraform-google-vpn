@@ -40,8 +40,8 @@ output "mgt_tunnel_names" {
 
 */
 
-output "external_peer" {
-  value = module.vpn-spoke1-to-hub.external_gateway
+output "peer_gateway" {
+  value = module.vpn-spoke1-to-hub.peer_gcp_gateway
   
 }
 
