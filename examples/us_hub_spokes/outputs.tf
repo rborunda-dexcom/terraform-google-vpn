@@ -47,6 +47,7 @@ output "external_peer" {
 
 output "shared_secret" {
   value = module.vpn-spoke2-to-hub.random_secret
+  sensitive = false
 }
 
 
