@@ -48,6 +48,32 @@ module "vpn-hub-to-spoke1" {
       peer_external_gateway_interface = null
       shared_secret                   = ""
     }
+    remote-2 = {
+      bgp_peer = {
+        address = "169.254.1.6"
+        asn     = 64515
+      }
+      bgp_peer_options                = null
+      peer_gcp_gateway                = module.vpn-spoke2-to-hub.self_link //attemp to change gateway name for this tunnel
+      bgp_session_range               = "169.254.1.4/30"
+      ike_version                     = 2
+      vpn_gateway_interface           = 2
+      peer_external_gateway_interface = null
+      shared_secret                   = ""
+    }
+    remote-3 = {
+      bgp_peer = {
+        address = "169.254.2.6"
+        asn     = 64515
+      }
+      bgp_peer_options                = null
+      peer_gcp_gateway                = module.vpn-spoke2-to-hub.self_link //attemp to change gateway name for this tunnel
+      bgp_session_range               = "169.254.2.4/30"
+      ike_version                     = 2
+      vpn_gateway_interface           = 3
+      peer_external_gateway_interface = null
+      shared_secret                   = ""
+    }
   }
 }
 
