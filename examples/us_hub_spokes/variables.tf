@@ -39,7 +39,7 @@ variable "spoke2_project_id" {
 variable "spoke2_network_self_link" {
   description = "Spoke2 Network Self Link."
   type        = string
-  default     = "https://www.googleapis.com/compute/v1/projects/us-spoke2/global/networks/spoke2-network"
+  default     = "https://www.googleapis.com/compute/v1/projects/ringed-furnace-331520/global/networks/spoke2-network"
 }
 
 /* hub variables  */
