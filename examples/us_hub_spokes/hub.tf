@@ -59,7 +59,7 @@ module "vpn-hub-to-spoke2" {
   network          = var.hub_network_self_link
   name             = "hub-to-spoke2"
   peer_gcp_gateway = module.vpn-spoke2-to-hub.self_link
-  router_asn       = 64514
+  router_asn       = 64516
   tunnels = {
     remote-0 = {
       bgp_peer = {
