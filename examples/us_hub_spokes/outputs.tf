@@ -44,6 +44,6 @@ output "mgt_tunnel_names" {
 ## Need to make this output secret later.
 output "secret" {
   description = "Shared Secret for GBP"
-  value = module.vpn-hub-to-spoke1.random_id.secret
+  value = random_id.secret
 
 }
