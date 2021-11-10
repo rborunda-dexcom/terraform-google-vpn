@@ -47,17 +47,3 @@ output "secret" {
   value = module.vpn-hub-to-spoke1.random_id.secret
 
 }
-
-
-output "s2-hub-ip-0" {
-  description = "external IP of first interface"
-  value = module.vpn-spoke2-to-hub.ha_gateway.vpn_interfaces.ip_address
-  
-}
-
-
-output "s2-hub-ip-1" {
-  description = "external IP of first interface"
-  value = module.vpn-spoke2-to-hub.ha_gateway.vpn_interfaces.ip_address
-  
-}
