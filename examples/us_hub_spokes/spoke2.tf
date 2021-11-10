@@ -22,7 +22,7 @@ module "vpn-spoke2-to-hub" {
   network          = var.spoke2_network_self_link
   name             = "spoke2-to-hub"
   router_asn       = 64513
-  peer_gcp_gateway = module.vpn-hub-to-Spoke1.self_link /*this points to spoke1 to reuse it */
+  peer_gcp_gateway = module.vpn-hub-to-spoke1.self_link /*this points to spoke1 to reuse it */
   tunnels = {
     remote-0 = {
       bgp_peer = {
