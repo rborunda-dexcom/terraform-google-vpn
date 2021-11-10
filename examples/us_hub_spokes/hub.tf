@@ -52,13 +52,13 @@ module "vpn-hub-to-spoke1" {
 }
 
 
-/*
+
 module "vpn-hub-to-spoke2" {
   source           = "../../modules/vpn_ha"
   project_id       = var.hub_project_id
   region           = var.region
   network          = var.hub_network_self_link
-  name             = "hub-to-spoke2"
+  name             = "hub-to-spoke1"
   peer_gcp_gateway = module.vpn-spoke2-to-hub.self_link
   router_asn       = 64514
   tunnels = {
@@ -88,4 +88,3 @@ module "vpn-hub-to-spoke2" {
     }
   }
 }
-*/
