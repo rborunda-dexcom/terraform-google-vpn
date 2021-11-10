@@ -48,6 +48,7 @@ module "vpn-hub-to-spoke1" {
       peer_external_gateway_interface = null
       shared_secret                   = ""
     }
+   /*
     remote-2 = {
       bgp_peer = {
         address         = "169.254.1.6"
@@ -73,7 +74,7 @@ module "vpn-hub-to-spoke1" {
       vpn_gateway_interface           = 1
       peer_external_gateway_interface = null
       shared_secret                   = ""
-    }
+    } */
   }
 }
 
