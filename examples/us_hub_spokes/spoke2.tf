@@ -30,7 +30,12 @@
           address = "169.254.1.6"
           asn     = 64516
         }
-        bgp_peer_options                = null
+      bgp_peer_options                = {
+        advertise_groups    = []
+        advertise_ip_ranges =  {"10.2.0.0/16" = "this is the aggregate route"}
+        advertise_mode      = "CUSTOM"
+        route_priority      = 1000
+    }
         bgp_session_range               = "169.254.1.5/30"
         ike_version                     = 2
         vpn_gateway_interface           = 0
@@ -42,7 +47,12 @@
           address = "169.254.2.6"
           asn     = 64516
         }
-        bgp_peer_options                = null
+      bgp_peer_options                = {
+        advertise_groups    = []
+        advertise_ip_ranges =  {"10.2.0.0/16" = "this is the aggregate route"}
+        advertise_mode      = "CUSTOM"
+        route_priority      = 1000
+    }
         bgp_session_range               = "169.254.2.5/30"
         ike_version                     = 2
         vpn_gateway_interface           = 1
