@@ -40,5 +40,13 @@ output "mgt_tunnel_names" {
 
 */
 
+output "external_peer" {
+  value = module.vpn-spoke2-to-hub.self_link
+  
+}
+
+output "shared secret" {
+  value = module.vpn-spoke2-to-hub.random_secret
+}
 
 
