@@ -15,38 +15,44 @@
  */
 
 ##To MGMT VPC
-module "vpn-spoke2-to-hub" {
-  source           = "../../modules/vpn_ha"
-  project_id       = var.spoke2_project_id
-  region           = var.region
-  network          = var.spoke2_network_self_link
-  name             = "spoke2-to-hub"
-  router_asn       = 64513
-  peer_gcp_gateway = module.vpn-hub-to-spoke1.self_link /*this points to spoke1 to reuse it */
-  tunnels = {
-    remote-0 = {
-      bgp_peer = {
-        address = "169.254.1.5"
-        asn     = 64515
+
+
+/*
+  module "vpn-spoke2-to-hub" {
+    source           = "../../modules/vpn_ha"
+    project_id       = var.spoke2_project_id
+    region           = var.region
+    network          = var.spoke2_network_self_link
+    name             = "spoke2-to-hub"
+    router_asn       = 64513
+    peer_gcp_gateway = module.vpn-hub-to-spoke1.self_link //this points to spoke1 to reuse it 
+    tunnels = {
+      remote-0 = {
+        bgp_peer = {
+          address = "169.254.1.5"
+          asn     = 64515
+        }
+        bgp_peer_options                = null
+        bgp_session_range               = "169.254.1.4/30"
+        ike_version                     = 2
+        vpn_gateway_interface           = 0
+        peer_external_gateway_interface = null
+        shared_secret                   = module.vpn-hub-to-spoke2.random_secret
       }
-      bgp_peer_options                = null
-      bgp_session_range               = "169.254.1.4/30"
-      ike_version                     = 2
-      vpn_gateway_interface           = 0
-      peer_external_gateway_interface = null
-      shared_secret                   = module.vpn-hub-to-spoke2.random_secret
-    }
-    remote-1 = {
-      bgp_peer = {
-        address = "169.254.2.5"
-        asn     = 64515
+      remote-1 = {
+        bgp_peer = {
+          address = "169.254.2.5"
+          asn     = 64515
+        }
+        bgp_peer_options                = null
+        bgp_session_range               = "169.254.2.4/30"
+        ike_version                     = 2
+        vpn_gateway_interface           = 1
+        peer_external_gateway_interface = null
+        shared_secret                   = module.vpn-hub-to-spoke2.random_secret
       }
-      bgp_peer_options                = null
-      bgp_session_range               = "169.254.2.4/30"
-      ike_version                     = 2
-      vpn_gateway_interface           = 1
-      peer_external_gateway_interface = null
-      shared_secret                   = module.vpn-hub-to-spoke2.random_secret
     }
   }
-}
+
+
+*/
