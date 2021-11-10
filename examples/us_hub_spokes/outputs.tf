@@ -41,9 +41,4 @@ output "mgt_tunnel_names" {
 */
 
 
-## Need to make this output secret later.
-output "secret" {
-  description = "Shared Secret for GBP"
-  value = vpn-spoke1-to-hub.tunnels.remote-0.shared_secret
 
-}
