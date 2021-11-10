@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-##To Prod VPC
+##To Hub to spoke1
 module "vpn-hub-to-spoke1" {
   source           = "../../modules/vpn_ha"
   project_id       = var.hub_project_id
@@ -51,7 +51,7 @@ module "vpn-hub-to-spoke1" {
   }
 }
 
-
+##from Hub to Spoke2
 module "vpn-hub-to-spoke2" {
   source           = "../../modules/vpn_ha"
   project_id       = var.hub_project_id
