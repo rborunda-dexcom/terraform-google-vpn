@@ -54,7 +54,7 @@ module "vpn-hub-to-spoke1" {
         asn             = 64515
       }
       bgp_peer_options                = null
-      peer_external_gateway           = module.vpn-spoke2-to-hub.self_link
+      peer_external_gateway           = module.vpn-spoke2-to-hub.external_gateway
       peer_gcp_gateway                = module.vpn-spoke2-to-hub.self_link //attemp to change gateway name for this tunnel
       bgp_session_range               = "169.254.1.4/30"
       ike_version                     = 2
@@ -68,7 +68,7 @@ module "vpn-hub-to-spoke1" {
         asn     = 64515
       }
       bgp_peer_options                = null
-      peer_external_gateway           = module.vpn-spoke2-to-hub.self_link
+      peer_external_gateway           = module.vpn-spoke2-to-hub.external_gateway
       peer_gcp_gateway                = module.vpn-spoke2-to-hub.self_link //attemp to change gateway name for this tunnel
       bgp_session_range               = "169.254.2.4/30"
       ike_version                     = 2
