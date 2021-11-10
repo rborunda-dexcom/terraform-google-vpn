@@ -67,7 +67,7 @@ module "vpn-hub-to-spoke2" {
         asn     = 64515
       }
       bgp_peer_options                = null
-      bgp_session_range               = "169.254.1.4/30"
+      bgp_session_range               = "169.254.1.6/30"
       ike_version                     = 2
       vpn_gateway_interface           = 0
       peer_external_gateway_interface = null
@@ -79,7 +79,7 @@ module "vpn-hub-to-spoke2" {
         asn     = 64515
       }
       bgp_peer_options                = null
-      bgp_session_range               = "169.254.2.4/30"
+      bgp_session_range               = "169.254.2.6/30"
       ike_version                     = 2
       vpn_gateway_interface           = 1
       peer_external_gateway_interface = null

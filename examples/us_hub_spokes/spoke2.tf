@@ -31,7 +31,7 @@
           asn     = 64516
         }
         bgp_peer_options                = null
-        bgp_session_range               = "169.254.1.4/30"
+        bgp_session_range               = "169.254.1.5/30"
         ike_version                     = 2
         vpn_gateway_interface           = 0
         peer_external_gateway_interface = null
@@ -43,7 +43,7 @@
           asn     = 64516
         }
         bgp_peer_options                = null
-        bgp_session_range               = "169.254.2.4/30"
+        bgp_session_range               = "169.254.2.5/30"
         ike_version                     = 2
         vpn_gateway_interface           = 1
         peer_external_gateway_interface = null
