@@ -36,7 +36,7 @@ variable "spoke2_project_id" {
   default     = "us-spoke2"
 }
 
-variable "spoke1_network_self_link" {
+variable "spoke2_network_self_link" {
   description = "Spoke2 Network Self Link."
   type        = string
   default     = "https://www.googleapis.com/compute/v1/projects/us-spoke2/global/networks/spoke2-network"
