@@ -31,7 +31,7 @@ module "vpn-hub-to-spoke1" {
       }
       bgp_peer_options                = {
         advertise_groups    = []
-        advertise_ip_ranges = {range = "10.1.0.0/16"}
+        advertise_ip_ranges = {"10.1.0.0/16"}
         advertise_mode      = "CUSTOM"
         route_priority      = 1000
     }
