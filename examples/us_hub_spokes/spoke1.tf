@@ -31,7 +31,7 @@ module "vpn-spoke1-to-hub" {
       }
       bgp_peer_options                = {
         advertise_groups    = []
-        advertise_ip_ranges =  {"10.1.0.0/16" = "this is the aggregate route"}
+        advertise_ip_ranges =  {"10.1.0.0/16" = "this is the aggregate route managed by TF"} //The module parses this one map and assigned the key as the IP range and the value as the description of the IP range.
         advertise_mode      = "CUSTOM"
         route_priority      = 1000
     }
@@ -48,7 +48,7 @@ module "vpn-spoke1-to-hub" {
       }
       bgp_peer_options                = {
         advertise_groups    = []
-        advertise_ip_ranges =  {"10.1.0.0/16" = "this is the aggregate route"}
+        advertise_ip_ranges =  {"10.1.0.0/16" = "this is the aggregate route managed by TF"} //The module parses this one map and assigned the key as the IP range and the value as the description of the IP range.
         advertise_mode      = "CUSTOM"
         route_priority      = 1000
     }

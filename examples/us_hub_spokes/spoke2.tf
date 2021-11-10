@@ -32,7 +32,7 @@
         }
       bgp_peer_options                = {
         advertise_groups    = []
-        advertise_ip_ranges =  {"10.2.0.0/16" = "this is the aggregate route"}
+        advertise_ip_ranges =  {"10.2.0.0/16" = "this is the aggregate route"} //The module parses this one map and assigned the key as the IP range and the value as the description of the IP range.
         advertise_mode      = "CUSTOM"
         route_priority      = 1000
     }
@@ -49,7 +49,7 @@
         }
       bgp_peer_options                = {
         advertise_groups    = []
-        advertise_ip_ranges =  {"10.2.0.0/16" = "this is the aggregate route"}
+        advertise_ip_ranges =  {"10.2.0.0/16" = "this is the aggregate route"} //The module parses this one map and assigned the key as the IP range and the value as the description of the IP range.
         advertise_mode      = "CUSTOM"
         route_priority      = 1000
     }
