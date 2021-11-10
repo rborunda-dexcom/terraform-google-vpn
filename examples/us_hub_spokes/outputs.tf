@@ -49,14 +49,14 @@ output "secret" {
 }
 
 
-output "s2-hub-ip[0]" {
+output "s2-hub-ip-0" {
   description = "external IP of first interface"
   value = module.vpn-spoke2-to-hub.google_compute_ha_vpn_gateway.ha_gateway[0].vpn_interfaces[0].ip_address
   
 }
 
 
-output "s2-hub-ip[1]" {
+output "s2-hub-ip-1" {
   description = "external IP of first interface"
   value = module.vpn-spoke2-to-hub.google_compute_ha_vpn_gateway.ha_gateway[0].vpn_interfaces[1].ip_address
   
