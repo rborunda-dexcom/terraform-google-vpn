@@ -63,7 +63,7 @@ module "vpn-hub-to-spoke2" {
   tunnels = {
     remote-0 = {
       bgp_peer = {
-        address = "169.254.1.6"
+        address = "169.254.1.5"
         asn     = 64515
       }
       bgp_peer_options                = null
@@ -75,7 +75,7 @@ module "vpn-hub-to-spoke2" {
     }
     remote-1 = {
       bgp_peer = {
-        address = "169.254.2.6"
+        address = "169.254.2.5"
         asn     = 64515
       }
       bgp_peer_options                = null
