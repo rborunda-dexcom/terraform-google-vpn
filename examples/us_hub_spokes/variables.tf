@@ -33,7 +33,7 @@ variable "spoke1_network_self_link" {
 variable "spoke2_project_id" {
   description = "Spoke2 Project ID."
   type        = string
-  default     = "us-spoke2"
+  default     = "ringed-furnace-331520"
 }
 
 variable "spoke2_network_self_link" {
