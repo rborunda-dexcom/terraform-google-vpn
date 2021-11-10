@@ -57,7 +57,7 @@ module "vpn-hub-to-spoke1" {
       peer_gcp_gateway                = module.vpn-spoke2-to-hub.self_link //attemp to change gateway name for this tunnel
       bgp_session_range               = "169.254.1.4/30"
       ike_version                     = 2
-      vpn_gateway_interface           = 0
+      vpn_gateway_interface           = 3
       peer_external_gateway_interface = null
       shared_secret                   = ""
     }
@@ -70,7 +70,7 @@ module "vpn-hub-to-spoke1" {
       peer_gcp_gateway                = module.vpn-spoke2-to-hub.self_link //attemp to change gateway name for this tunnel
       bgp_session_range               = "169.254.2.4/30"
       ike_version                     = 2
-      vpn_gateway_interface           = 1
+      vpn_gateway_interface           = 4
       peer_external_gateway_interface = null
       shared_secret                   = ""
     }
