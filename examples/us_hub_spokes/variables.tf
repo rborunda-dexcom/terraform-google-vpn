@@ -14,28 +14,45 @@
  * limitations under the License.
  */
 
+
+/*  spoke1 variables  */
 variable "spoke1_project_id" {
   description = "Spoke1 Project ID."
   type        = string
-  default = "us-spoke1"
+  default     = "us-spoke1"
 }
 
 variable "spoke1_network_self_link" {
   description = "Spoke1 Network Self Link."
   type        = string
-  default = "https://www.googleapis.com/compute/v1/projects/us-spoke1/global/networks/spoke1-network"
+  default     = "https://www.googleapis.com/compute/v1/projects/us-spoke1/global/networks/spoke1-network"
 }
 
+
+/*  spoke2 variables  */
+variable "spoke2_project_id" {
+  description = "Spoke2 Project ID."
+  type        = string
+  default     = "us-spoke2"
+}
+
+variable "spoke1_network_self_link" {
+  description = "Spoke2 Network Self Link."
+  type        = string
+  default     = "https://www.googleapis.com/compute/v1/projects/us-spoke2/global/networks/spoke2-network"
+}
+
+/* hub variables  */
 variable "hub_project_id" {
   description = "Management Project ID."
   type        = string
-  default = "us-hub"
+  default     = "us-hub"
 }
 
 variable "hub_network_self_link" {
   description = "HUB Network Self Link."
   type        = string
-  default = "https://www.googleapis.com/compute/v1/projects/us-hub/global/networks/hub-network"
+  default     = "https://www.googleapis.com/compute/v1/projects/us-hub/global/networks/hub-network"
 }
 
 variable "region" {
