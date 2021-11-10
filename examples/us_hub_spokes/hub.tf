@@ -29,12 +29,7 @@ module "vpn-hub-to-spoke1" {
         address = "169.254.1.1"
         asn     = 64513
       }
-      bgp_peer_options                = {
-        advertise_groups    = []
-        advertise_ip_ranges =  "10.1.0.0/16"
-        advertise_mode      = "CUSTOM"
-        route_priority      = 1000
-    }
+      bgp_peer_options                = null
       bgp_session_range               = "169.254.1.2/30"
       ike_version                     = 2
       vpn_gateway_interface           = 0
