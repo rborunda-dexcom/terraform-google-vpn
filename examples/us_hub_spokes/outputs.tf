@@ -40,10 +40,7 @@ output "mgt_tunnel_names" {
 
 */
 
-output "peer_gateway" {
-  value = module.vpn-spoke1-to-hub.peer_gcp_gateway
-  
-}
+
 
 output "shared_secret" {
   value = module.vpn-spoke1-to-hub.random_secret
