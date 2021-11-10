@@ -22,13 +22,13 @@
     region           = var.region
     network          = var.spoke2_network_self_link
     name             = "spoke2-to-hub"
-    router_asn       = 64516
+    router_asn       = 64515
     peer_gcp_gateway = module.vpn-hub-to-spoke2.self_link //this points to spoke1 to reuse it 
     tunnels = {
       remote-0 = {
         bgp_peer = {
           address = "169.254.1.5"
-          asn     = 64515
+          asn     = 64516
         }
         bgp_peer_options                = null
         bgp_session_range               = "169.254.1.4/30"
@@ -40,7 +40,7 @@
       remote-1 = {
         bgp_peer = {
           address = "169.254.2.5"
-          asn     = 64515
+          asn     = 64516
         }
         bgp_peer_options                = null
         bgp_session_range               = "169.254.2.4/30"
