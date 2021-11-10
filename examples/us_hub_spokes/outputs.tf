@@ -41,12 +41,12 @@ output "mgt_tunnel_names" {
 */
 
 output "external_peer" {
-  value = module.vpn-spoke2-to-hub.external_gateway
+  value = module.vpn-spoke1-to-hub.external_gateway
   
 }
 
 output "shared_secret" {
-  value = module.vpn-spoke2-to-hub.random_secret
+  value = module.vpn-spoke1-to-hub.random_secret
   sensitive = true
 }
 
