@@ -21,7 +21,7 @@ module "vpn-hub-to-spoke1" {
   region           = var.region
   network          = var.hub_network_self_link
   name             = "hub-to-spoke1"
-  peer_gcp_gateway = module.vpn-spoke1-to-hub.self_link
+  peer_gcp_gateway = module.vpn-spoke1-to-hub.self_link // for existing peer gw, don't invoke to module (it creates a gw), but pass a variable with the name of the existing gw
   router_asn       = 64514
   tunnels = {
     remote-0 = {
