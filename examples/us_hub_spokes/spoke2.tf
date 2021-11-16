@@ -15,7 +15,7 @@
  */
 
 ##To MGMT VPC
-
+/*
   module "vpn-spoke2-to-hub" {
     source           = "../../modules/vpn_ha"
     project_id       = var.spoke2_project_id
@@ -63,3 +63,4 @@
   }
 
 
+*/
