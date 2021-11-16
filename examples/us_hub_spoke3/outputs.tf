@@ -47,7 +47,4 @@ output "shared_secret" {
   sensitive = true
 }
 
-output "spoke1_gateway_selfl_link" {
-  descrption  = "the self_link for the gateway produced by the spoke1 invocation of the module"
-  value       = google_compute_ha_vpn_gateway.
-}
+
