@@ -19,6 +19,12 @@ output "gateway" {
   value       = google_compute_ha_vpn_gateway.ha_gateway
 }
 
+#variable for Dexcom - to be used to reference self_link for hub
+output "gateway_self_link" {
+  description = "HA VPN gateway resource."
+  value       = google_compute_ha_vpn_gateway.ha_gateway.self_link
+}
+
 output "external_gateway" {
   description = "External VPN gateway resource."
   value = (
