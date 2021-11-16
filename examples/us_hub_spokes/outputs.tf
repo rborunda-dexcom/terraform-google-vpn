@@ -47,6 +47,8 @@ output "shared_secret" {
   sensitive = true
 }
 
-output "hub_gateway" {
-  value = module.vpn-hub-to-spoke1.self_link
+
+
+output "hub_gateway_id" {
+  value = module.vpn-hub-to-spoke1.gateway
 }
