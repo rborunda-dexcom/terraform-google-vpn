@@ -50,5 +50,5 @@ output "shared_secret" {
 
 
 output "hub_gateway_id" {
-  value = module.vpn-hub-to-spoke1.gateway
+  value = module.vpn-hub-to-spoke1.google_compute_ha_vpn_gateway.ha_gateway[0].self_link
 }
