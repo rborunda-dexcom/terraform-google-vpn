@@ -48,5 +48,5 @@ output "shared_secret" {
 }
 
 output "hub_gateway" {
-  value = module.vpn-hub-to-spoke1.
+  value = module.vpn-hub-to-spoke1.self_link
 }
