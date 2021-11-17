@@ -23,7 +23,7 @@ data "google_compute_ha_vpn_gateway" "vpn-hub" {
 }
 
 
-##To MGMT VPC
+##Spoke1 to Hub
 module "vpn-spoke1-to-hub" {
   source           = "../../modules/vpn_ha"
   project_id       = var.spoke1_project_id

@@ -15,7 +15,32 @@
  */
 
 
+/*  spoke1 variables  */
+variable "spoke1_project_id" {
+  description = "Spoke1 Project ID."
+  type        = string
+  default     = "us-spoke1"
+}
 
+variable "spoke1_network_self_link" {
+  description = "Spoke1 Network Self Link."
+  type        = string
+  default     = "https://www.googleapis.com/compute/v1/projects/us-spoke1/global/networks/spoke1-network"
+}
+
+
+/*  spoke2 variables  */
+variable "spoke2_project_id" {
+  description = "Spoke2 Project ID."
+  type        = string
+  default     = "ringed-furnace-331520"
+}
+
+variable "spoke2_network_self_link" {
+  description = "Spoke2 Network Self Link."
+  type        = string
+  default     = "https://www.googleapis.com/compute/v1/projects/ringed-furnace-331520/global/networks/spoke2-network"
+}
 
 /* hub variables  */
 variable "hub_project_id" {
@@ -27,8 +52,7 @@ variable "hub_project_id" {
 variable "hub_network_self_link" {
   description = "HUB Network Self Link."
   type        = string
-  default = data.google_compute_ha_vpn_gateway.self_link
-  # default     = "https://www.googleapis.com/compute/v1/projects/us-hub/global/networks/hub-network"
+  default     = "https://www.googleapis.com/compute/v1/projects/us-hub/global/networks/hub-network"
 }
 
 variable "region" {
@@ -36,17 +60,3 @@ variable "region" {
   type        = string
   default     = "us-central1"
 }
-
-
-/*
- variable "create_vpn_gateway needs to be set to false only after the hub gateway is created"
-*/
-variable "create_vpn_gateway" {
-  description = "When this variable is set to anyting but true the code will not create a new ha vpn gw"
-  default = "false"
-  
-}
-
-/*
-variable "var.router_name" needs to be set to the router name in the hub account to ensure we reuse it and not create a new one
-*/
