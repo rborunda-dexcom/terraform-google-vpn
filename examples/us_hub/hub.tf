@@ -27,7 +27,8 @@ module "vpn-hub" {
 
 data "google_compute_ha_vpn_gateway" "vpn-hub" {
   filter {
-    name = "hub-to-spoke1"
+    name = "name"
+    values = ["hub-to-spoke1"]
 
   }
 }
