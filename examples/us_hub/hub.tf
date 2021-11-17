@@ -27,6 +27,9 @@ module "vpn-hub" {
 
 data "google_compute_ha_vpn_gateway" "vpn-hub" {
   name             = "hub-to-spoke1"
+  project = var.hub_project_id
+  region = var.region
+
 }
 
 
