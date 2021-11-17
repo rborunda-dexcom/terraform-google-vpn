@@ -33,7 +33,7 @@ data "google_compute_ha_vpn_gateway" "vpn-hub" {
 
 }
 
-data "google_computer_router" "vpn-hub" {
+data "google_compute_router" "vpn-hub" {
   name  = "vpn-${var.name}"
   network = var.hub_network_self_link
   project = var.hub_project_id
