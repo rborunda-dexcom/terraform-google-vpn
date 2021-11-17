@@ -42,9 +42,3 @@ output "mgt_tunnel_names" {
 
 
 
-
-
-
-output "hub_gateway_id" {
-  value = module.vpn-hub-to-spoke1.name
-}
