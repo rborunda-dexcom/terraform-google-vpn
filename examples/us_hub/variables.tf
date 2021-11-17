@@ -27,7 +27,7 @@ variable "hub_project_id" {
 variable "hub_network_self_link" {
   description = "HUB Network Self Link."
   type        = string
-  default = data.google_compute_ha_vpn_gateway.self_link
+  default = data.google_compute_ha_vpn_gateway.vpn-hub.self_link
   # default     = "https://www.googleapis.com/compute/v1/projects/us-hub/global/networks/hub-network"
 }
 
