@@ -25,6 +25,13 @@ module "vpn-hub" {
   router_asn       = 64514
 }
 
+data "google_compute_ha_vpn_gateway" "vpn-hub" {
+  filter {
+    name = "hub-to-spoke1"
+
+  }
+}
+
 
 /*
 ##from Hub to Spoke2
