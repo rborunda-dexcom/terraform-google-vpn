@@ -27,8 +27,7 @@ variable "hub_project_id" {
 variable "hub_network_self_link" {
   description = "HUB Network Self Link."
   type        = string
-  default = data.google_compute_ha_vpn_gateway.vpn-hub.self_link
-  # default     = "https://www.googleapis.com/compute/v1/projects/us-hub/global/networks/hub-network"
+  default     = "https://www.googleapis.com/compute/v1/projects/us-hub/global/networks/hub-network"
 }
 
 variable "region" {
@@ -50,3 +49,6 @@ variable "create_vpn_gateway" {
 /*
 variable "var.router_name" needs to be set to the router name in the hub account to ensure we reuse it and not create a new one
 */
+variable "router_name" {
+  
+}
