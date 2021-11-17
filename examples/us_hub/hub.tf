@@ -41,6 +41,20 @@ data "google_compute_router" "vpn-hub" {
 
 }
 
+/*
+# ref this url: https://www.terraform.io/docs/language/state/remote-state-data.html
+use locla for now, but will ahve to get the backend later
+
+
+data "random_secret" "hub" {
+
+
+
+}
+*/
+
+
+
 
 /*
 ##from Hub to Spoke2
