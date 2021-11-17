@@ -50,6 +50,6 @@ variable "create_vpn_gateway" {
 variable "var.router_name" needs to be set to the router name in the hub account to ensure we reuse it and not create a new one
 */
 variable "router_name" {
-  default = module.vpn-hub.router_name
+  default = output.router_name
   
 }
