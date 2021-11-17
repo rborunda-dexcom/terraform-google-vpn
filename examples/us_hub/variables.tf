@@ -49,7 +49,8 @@ variable "create_vpn_gateway" {
 /*
 variable "var.router_name" needs to be set to the router name in the hub account to ensure we reuse it and not create a new one
 */
-variable "router_name" {
-  default = output.router_name
-  
+
+variable "name" {
+  description = "The name to be used to construct other resource names"
+  default = "hub-to-spoke1"
 }

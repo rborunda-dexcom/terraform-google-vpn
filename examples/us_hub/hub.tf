@@ -20,15 +20,24 @@ module "vpn-hub" {
   project_id       = var.hub_project_id
   region           = var.region
   network          = var.hub_network_self_link
-  name             = "hub-to-spoke1"
+  name             = var.name
   peer_gcp_gateway =  "" // for existing peer gw, don't invoke to module (it creates a gw), but pass a variable with the name of the existing gw
   router_asn       = 64514
 }
 
+# Get ha vpn gw name
 data "google_compute_ha_vpn_gateway" "vpn-hub" {
-  name             = "hub-to-spoke1"
+  name             = var.name
   project = var.hub_project_id
   region = var.region
+
+}
+
+data "google_computer_router" "vpn-hub" {
+  name  = "vpn-${var.name}"
+  network = var.hub_network_self_link
+  project = var.hub_project_id
+  region  = var.region
 
 }
 
