@@ -37,7 +37,9 @@ variable "region" {
 }
 
 
-/* variable "create_vpn_gateway needs to be set to false only after the hub gateway is created"
+/*
+ variable "create_vpn_gateway needs to be set to false only after the hub gateway is created"
+*/
 variable "create_vpn_gateway" {
   description = "When this variable is set to anyting but true the code will not create a new ha vpn gw"
   default = "false"
