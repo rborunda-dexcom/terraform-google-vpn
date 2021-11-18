@@ -96,26 +96,16 @@ data "google_compute_router" "vpn-hub" {
 
 }
 
-data "google_compute_ha_vpn_gateway" "us-spoke1" {
-  name             = "us-spoke1"
-  project = "us-spoke1"
-  region = "us-central1"
 
-}
 
-data "google_compute_ha_vpn_gateway" "us-spoke2" {
-  name             = "us-spoke2"
-  project = "ringed-furnace-331520"
-  region = "us-central1"
-
-}
-
+/*
 data "google_compute_ha_vpn_gateway" "eu-spoke3" {
   name             = "eu-spoke3"
   project = "ea-spoke-3"
   region = "us-central1"
 
 }
+*/
 
 /*
 # ref this url: https://www.terraform.io/docs/language/state/remote-state-data.html
