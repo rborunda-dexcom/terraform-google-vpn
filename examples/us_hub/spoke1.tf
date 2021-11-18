@@ -43,7 +43,7 @@ module "vpn-spoke1-to-hub" {
       ike_version                     = 2
       vpn_gateway_interface           = 0
       peer_external_gateway_interface = null
-      shared_secret                   = module.vpn-hub-to-spoke1.random_secret
+      shared_secret                   = module.vpn-hub.random_secret
     }
     remote-1 = {
       bgp_peer = {
@@ -60,7 +60,7 @@ module "vpn-spoke1-to-hub" {
       ike_version                     = 2
       vpn_gateway_interface           = 1
       peer_external_gateway_interface = null
-      shared_secret                   = module.vpn-hub-to-spoke1.random_secret
+      shared_secret                   = module.vpn-hub.random_secret
     }
   }
 }
