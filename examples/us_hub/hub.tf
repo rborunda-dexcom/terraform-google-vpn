@@ -71,7 +71,7 @@ tunnels = {
       }
       bgp_peer_options                = null
       bgp_session_range               = "169.254.2.6/30"
-      peer_gcp_gateway                =  data.google_compute_ha_vpn_gateway.vpn-spoke1-to-hub.self_link
+      peer_gcp_gateway                =  data.google_compute_ha_vpn_gateway.data-spoke1-to-hub.self_link
       ike_version                     = 2
       vpn_gateway_interface           = 1
       peer_external_gateway_interface = null
