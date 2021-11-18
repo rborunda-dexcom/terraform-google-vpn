@@ -97,6 +97,21 @@ data "google_compute_router" "vpn-hub" {
 }
 
 
+data "google_compute_ha_vpn_gateway" "vpn-spoke2-to-hub" {
+  name             = "us-spoke2"
+  project = "ringed-furnace-331520"
+  region = "us-central1"
+
+}
+
+data "google_compute_ha_vpn_gateway" "vpn-spoke1-to-hub" {
+  name             = "us-spoke1"
+  project = "us-spoke1"
+  region = "us-central1"
+
+}
+
+
 
 /*
 data "google_compute_ha_vpn_gateway" "eu-spoke3" {
