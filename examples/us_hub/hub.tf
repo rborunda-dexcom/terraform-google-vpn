@@ -44,7 +44,7 @@ tunnels = {
       }
       bgp_peer_options                = null
       bgp_session_range               = "169.254.2.6/30"
-      peer_gcp_gateway                = "eu-spoke-3"
+      peer_gcp_gateway                =  data.google_compute_ha_vpn_gateway.eu-spoke3.name
       ike_version                     = 2
       vpn_gateway_interface           = 1
       peer_external_gateway_interface = null
@@ -67,6 +67,15 @@ data "google_compute_router" "vpn-hub" {
   network = var.hub_network_self_link
   project = var.hub_project_id
   region  = var.region
+
+}
+
+
+
+data "google_compute_ha_vpn_gateway" "eu-spoke3" {
+  name             = "eu-spoke3"
+  project = "ea=spoke-3"
+  region = "us-central1"
 
 }
 
