@@ -48,7 +48,7 @@ tunnels = {
       ike_version                     = 2
       vpn_gateway_interface           = 1
       peer_external_gateway_interface = null
-      shared_secret                   = "".0
+      shared_secret                   = ""
 
     }
     remote-2 = {
