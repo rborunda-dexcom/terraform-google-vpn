@@ -23,6 +23,35 @@ module "vpn-hub" {
   name             = var.name
   peer_gcp_gateway =  "" // for existing peer gw, don't invoke to module (it creates a gw), but pass a variable with the name of the existing gw
   router_asn       = 64514
+tunnels = {
+    remote-0 = {
+      bgp_peer = {
+        address = "169.254.1.5"
+        asn     = 64515
+      }
+      bgp_peer_options                = null
+      bgp_session_range               = "169.254.1.6/30"
+      peer_gcp_gateway                = "eu-spoke-3"
+      ike_version                     = 2
+      vpn_gateway_interface           = 0
+      peer_external_gateway_interface = null
+      shared_secret                   = ""
+    }
+    remote-1 = {
+      bgp_peer = {
+        address = "169.254.2.5"
+        asn     = 64515
+      }
+      bgp_peer_options                = null
+      bgp_session_range               = "169.254.2.6/30"
+      peer_gcp_gateway                = "eu-spoke-3"
+      ike_version                     = 2
+      vpn_gateway_interface           = 1
+      peer_external_gateway_interface = null
+      shared_secret                   = ""
+    }
+  }
+}
 }
 
 # Get ha vpn gw name
