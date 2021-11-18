@@ -72,11 +72,3 @@ data "google_compute_ha_vpn_gateway" "data-spoke1-to-hub" {
   region = "us-central1"
 
 }
-
-# Get ha vpn gw name
-data "google_compute_ha_vpn_gateway" "vpn-hub" {
-  name             = "vpn-hub"
-  project = var.hub_project_id
-  region = var.region
-
-}
