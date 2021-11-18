@@ -68,7 +68,7 @@
 
   
 data "google_compute_ha_vpn_gateway" "vpn-spoke2-to-hub" {
-  name             = "us-spoke2"
+  name             = "spoke2-to-hub"
   project = "ringed-furnace-331520"
   region = "us-central1"
 
