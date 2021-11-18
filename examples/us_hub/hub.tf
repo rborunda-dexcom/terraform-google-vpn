@@ -31,7 +31,7 @@ tunnels = {
       }
       bgp_peer_options                = null
       bgp_session_range               = "169.254.1.6/30"
-      peer_gcp_gateway                = data.google_compute_ha_vpn_gateway.us-spoke2.name
+      var.peer_external_gateway       = data.google_compute_ha_vpn_gateway.us-spoke2.name
       ike_version                     = 2
       vpn_gateway_interface           = 0
       peer_external_gateway_interface = null
@@ -44,7 +44,7 @@ tunnels = {
       }
       bgp_peer_options                = null
       bgp_session_range               = "169.254.2.6/30"
-      peer_gcp_gateway                =  data.google_compute_ha_vpn_gateway.us-spoke2.name
+      var.peer_external_gateway       =  data.google_compute_ha_vpn_gateway.us-spoke2.name
       ike_version                     = 2
       vpn_gateway_interface           = 1
       peer_external_gateway_interface = null
@@ -57,7 +57,7 @@ tunnels = {
       }
       bgp_peer_options                = null
       bgp_session_range               = "169.254.1.6/30"
-      peer_gcp_gateway                = data.google_compute_ha_vpn_gateway.us-spoke1.name
+      var.peer_external_gateway       = data.google_compute_ha_vpn_gateway.us-spoke1.name
       ike_version                     = 2
       vpn_gateway_interface           = 0
       peer_external_gateway_interface = null
@@ -70,7 +70,7 @@ tunnels = {
       }
       bgp_peer_options                = null
       bgp_session_range               = "169.254.2.6/30"
-      peer_gcp_gateway                =  data.google_compute_ha_vpn_gateway.us-spoke1.name
+      var.peer_external_gateway       =  data.google_compute_ha_vpn_gateway.us-spoke1.name
       ike_version                     = 2
       vpn_gateway_interface           = 1
       peer_external_gateway_interface = null
