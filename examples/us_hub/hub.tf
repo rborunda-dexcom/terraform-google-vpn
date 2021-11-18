@@ -74,7 +74,7 @@ data "google_compute_router" "vpn-hub" {
 
 data "google_compute_ha_vpn_gateway" "eu-spoke3" {
   name             = "eu-spoke3"
-  project = "ea=spoke-3"
+  project = "ea-spoke-3"
   region = "us-central1"
 
 }
