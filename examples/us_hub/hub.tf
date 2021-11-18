@@ -52,7 +52,7 @@ tunnels = {
     }
   }
 }
-}
+
 
 # Get ha vpn gw name
 data "google_compute_ha_vpn_gateway" "vpn-hub" {
