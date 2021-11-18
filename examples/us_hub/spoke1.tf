@@ -66,9 +66,17 @@ module "vpn-spoke1-to-hub" {
 }
 
 
-data "google_compute_ha_vpn_gateway" "vpn-spoke1-to-hub" {
+data "google_compute_ha_vpn_gateway" "data-spoke1-to-hub" {
   name             = "spoke1-to-hub"
   project = "us-spoke1"
   region = "us-central1"
+
+}
+
+# Get ha vpn gw name
+data "google_compute_ha_vpn_gateway" "vpn-hub" {
+  name             = "vpn-hub"
+  project = var.hub_project_id
+  region = var.region
 
 }

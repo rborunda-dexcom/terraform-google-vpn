@@ -31,7 +31,7 @@ tunnels = {
       }
       bgp_peer_options                = null
       bgp_session_range               = "169.254.1.6/30"
-      peer_gcp_gateway                 = data.google_compute_ha_vpn_gateway.vpn-spoke2-to-hub.self_link
+      peer_gcp_gateway                 = data.google_compute_ha_vpn_gateway.data-spoke2-to-hub.self_link
       ike_version                     = 2
       vpn_gateway_interface           = 0
       peer_external_gateway_interface = null
@@ -44,11 +44,12 @@ tunnels = {
       }
       bgp_peer_options                = null
       bgp_session_range               = "169.254.2.6/30"
-      peer_gcp_gateway                =  data.google_compute_ha_vpn_gateway.vpn-spoke2-to-hub.self_link
+      peer_gcp_gateway                =  data.google_compute_ha_vpn_gateway.data-spoke2-to-hub.self_link
       ike_version                     = 2
       vpn_gateway_interface           = 1
       peer_external_gateway_interface = null
-      shared_secret                   = ""
+      shared_secret                   = "".0
+
     }
     remote-2 = {
       bgp_peer = {
@@ -57,7 +58,7 @@ tunnels = {
       }
       bgp_peer_options                = null
       bgp_session_range               = "169.254.1.6/30"
-      peer_gcp_gateway                 = data.google_compute_ha_vpn_gateway.vpn-spoke1-to-hub.self_link
+      peer_gcp_gateway                 = data.google_compute_ha_vpn_gateway.data-spoke1-to-hub.self_link
       ike_version                     = 2
       vpn_gateway_interface           = 0
       peer_external_gateway_interface = null
@@ -82,7 +83,7 @@ tunnels = {
 
 # Get ha vpn gw name
 data "google_compute_ha_vpn_gateway" "vpn-hub" {
-  name             = var.name
+  name             = "vpn-hub"
   project = var.hub_project_id
   region = var.region
 

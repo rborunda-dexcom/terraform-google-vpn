@@ -67,10 +67,18 @@
 
 
   
-data "google_compute_ha_vpn_gateway" "vpn-spoke2-to-hub" {
-  name             = "spoke2-to-hub"
+data "google_compute_ha_vpn_gateway" "us-spoke2" {
+  name             = "us-spoke2"
   project = "ringed-furnace-331520"
   region = "us-central1"
+
+}
+
+# Get ha vpn gw name
+data "google_compute_ha_vpn_gateway" "vpn-hub" {
+  name             = "vpn-hub"
+  project = var.hub_project_id
+  region = var.region
 
 }
 
