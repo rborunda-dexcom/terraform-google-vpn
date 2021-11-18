@@ -52,7 +52,7 @@ variable "var.router_name" needs to be set to the router name in the hub account
 
 variable "name" {
   description = "The name to be used to construct other resource names"
-  default = "hub-to-spoke1"
+  default = "hub-to-spoke"
 }
 
 

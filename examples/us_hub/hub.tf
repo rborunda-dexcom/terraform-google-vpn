@@ -83,7 +83,7 @@ tunnels = {
 
 # Get ha vpn gw name
 data "google_compute_ha_vpn_gateway" "vpn-hub" {
-  name             = "vpn-hub"
+  name             = "hub-to-spoke"
   project = var.hub_project_id
   region = var.region
 
