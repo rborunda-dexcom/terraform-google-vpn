@@ -51,87 +51,10 @@ tunnels = {
       shared_secret                   = ""
 
     }
-    remote-2 = {
-      bgp_peer = {
-        address = "169.254.1.5"
-        asn     = 64515
-      }
-      bgp_peer_options                = null
-      bgp_session_range               = "169.254.1.6/30"
-      peer_gcp_gateway                 = data.google_compute_ha_vpn_gateway.data-spoke1-to-hub.self_link
-      ike_version                     = 2
-      vpn_gateway_interface           = 0
-      peer_external_gateway_interface = null
-      shared_secret                   = ""
-    }
-    remote-3 = {
-      bgp_peer = {
-        address = "169.254.2.5"
-        asn     = 64515
-      }
-      bgp_peer_options                = null
-      bgp_session_range               = "169.254.2.6/30"
-      peer_gcp_gateway                =  data.google_compute_ha_vpn_gateway.data-spoke1-to-hub.self_link
-      ike_version                     = 2
-      vpn_gateway_interface           = 1
-      peer_external_gateway_interface = null
-      shared_secret                   = ""
-    }
+   
   }
 }
 
-
-# Get ha vpn gw name
-data "google_compute_ha_vpn_gateway" "vpn-hub" {
-  name             = "hub-to-spoke"
-  project = var.hub_project_id
-  region = var.region
-
-}
-
-
-
-data "google_compute_router" "vpn-hub" {
-  name  = "vpn-${var.name}"
-  network = var.hub_network_self_link
-  project = var.hub_project_id
-  region  = var.region
-
-}
-
-
-
-
-
-
-
-
-/*
-data "google_compute_ha_vpn_gateway" "eu-spoke3" {
-  name             = "eu-spoke3"
-  project = "ea-spoke-3"
-  region = "us-central1"
-
-}
-*/
-
-/*
-# ref this url: https://www.terraform.io/docs/language/state/remote-state-data.html
-use locla for now, but will ahve to get the backend later
-
-
-data "random_secret" "hub" {
-
-
-
-}
-*/
-
-
-
-
-/*
-##from Hub to Spoke2
 module "vpn-hub-to-spoke2" {
   source           = "../../modules/vpn_ha"
   project_id       = var.hub_project_id
@@ -167,5 +90,5 @@ module "vpn-hub-to-spoke2" {
     }
   }
 }
-*/
+
 
