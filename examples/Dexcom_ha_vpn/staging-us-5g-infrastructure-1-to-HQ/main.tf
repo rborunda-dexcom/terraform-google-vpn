@@ -9,22 +9,22 @@ module "staging-us-5g-infrastructure-1-to-hq" {
       redundancy_type = "SINGLE_IP_INTERNALLY_REDUNDANT"
       interfaces = [{
           id = 0
-          ip_address = "66.85.67.20" # on-prem router ip address
+          ip_address = "66.85.67.20" # on-prem router ip address # var.peer_external_gw_address
 
       }]
   }
-  router_asn = 65458
+  router_asn = 65458 # var.router.asn
   tunnels = {
     remote-0 = {
       bgp_peer = {
-        address = "169.254.18.94" //– for Staging5G – 169.254.18.94, for Prod5G - 169.254.18.98
-        asn     = 65456
+        address = "169.254.18.94" //– for Staging5G – 169.254.18.94, for Prod5G - 169.254.18.98 # var.tunnels-remote-0-bgp-peer-ip
+        asn     = 65456 # var.remot-0-bgp-peer-asn
       }
               bgp_peer_options                = {
-        advertise_groups    = []
-        advertise_ip_ranges =  {}
-        advertise_mode      = ""
-        route_priority      = 7777
+        advertise_groups    = [] # var.tunnels.route-0.bgp_peer_options.advertised_group
+        advertise_ip_ranges =  {} # var_tunnels_route-0_bgp_peer_options_advertised_ip_ranges
+        advertise_mode      = "" # var_tunnels_route-0_bgp_peer_options.advertised_mode
+        route_priority      = 7777 # var-tunnels-route-0.bgp_peer_options-route_priority
     }
       bgp_session_range = "169.254.18.93/30" #for Staging5g – 169.254.18.93/30, for Prod5G - 169.254.18.97/30
       ike_version       = 2

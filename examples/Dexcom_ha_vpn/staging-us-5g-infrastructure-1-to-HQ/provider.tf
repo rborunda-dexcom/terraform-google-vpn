@@ -5,11 +5,7 @@ provider "google" {
 
 }
 
-provider "google-beta" {
-  project     = "staging-us-5g-infrastructure-1"
-  region      = "us-central1"
 
-}
 
 
 terraform {
