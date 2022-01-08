@@ -23,7 +23,7 @@ module "staging-us-5g-infrastructure-1-to-hq" {
               bgp_peer_options                = {
         advertise_groups    = [] # var.tunnels.route-0.bgp_peer_options.advertised_group
         advertise_ip_ranges =  {} # var_tunnels_route-0_bgp_peer_options_advertised_ip_ranges
-        advertise_mode      = "" # var_tunnels_route-0_bgp_peer_options.advertised_mode
+        advertise_mode      = "DEFAULT" # var_tunnels_route-0_bgp_peer_options.advertised_mode
         route_priority      = 7777 # var-tunnels-route-0.bgp_peer_options-route_priority
     }
       bgp_session_range = "169.254.18.93/30" #for Staging5g – 169.254.18.93/30, for Prod5G - 169.254.18.97/30
@@ -41,7 +41,7 @@ module "staging-us-5g-infrastructure-1-to-hq" {
       bgp_peer_options                = {
         advertise_groups    = []
         advertise_ip_ranges =  {}
-        advertise_mode      = ""
+        advertise_mode      = "DEFAULT"
         route_priority      = 7777
     }
       bgp_session_range = "169.254.19.93/30" #for Staging5g – 169.254.19.93/30, for Prod5G - 169.254.19.97/30
