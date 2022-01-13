@@ -1,6 +1,15 @@
 
 module "staging-us-5g-infrastructure-1-to-hq" {
-  source           = "../../../modules/vpn_ha"
+
+    source = "terraform-google-modules/vpn/google//modules/vpn_ha"
+    version = "2.1.0"
+    ##source    = "github.com/terraform-google-modules/terraform-google-vpn.git//modules/vpn_ha?ref=v2.1.0" ### This one works
+    
+
+    #source             = "github.com/sweetspot/terraform-modules.git//terraform-google-vpn//modules/vpn_ha"
+
+
+  # source           = "../../../modules/vpn_ha" ##Local Development
   project_id  = var.project_id
   region  = var.region
   network         = var.network_self_link
