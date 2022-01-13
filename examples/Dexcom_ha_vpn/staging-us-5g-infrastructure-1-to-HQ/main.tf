@@ -35,29 +35,29 @@ module "staging-us-5g-infrastructure-1-to-hq" {
         advertise_mode      = "DEFAULT" # var_tunnels_route-0_bgp_peer_options.advertised_mode
         route_priority      = 7777 # var-tunnels-route-0.bgp_peer_options-route_priority
     }
-      bgp_session_range = "169.254.18.93/30" #for Staging5g – 169.254.18.93/30, for Prod5G - 169.254.18.97/30
-      ike_version       = 2
-      vpn_gateway_interface = 0
-      peer_external_gateway_interface = 0
-      shared_secret     = "e4-0BQ3HgG$z" #in Thycotic – will provide when ready
+      bgp_session_range = "169.254.18.93/30" #for Staging5g – 169.254.18.93/30, for Prod5G - 169.254.18.97/30 # var.var-tunnels-remote-0-bgp_session_range
+      ike_version       = 2 # var.ike_version
+      vpn_gateway_interface = 0 #var.tunnels-remote-0-vpn_gateway_interface
+      peer_external_gateway_interface = 0 #var.peer_external_gateway_interface
+      shared_secret     = "e4-0BQ3HgG$z" #in Thycotic – will provide when ready #var.shared_secret
     }
     remote-1 = {
       bgp_peer = {
-        address = "169.254.19.94" # - for Staging5G – 169.254.19.94, for Prod5G - 169.254.19.98
-        asn     = 65456
+        address = "169.254.19.94" # - for Staging5G – 169.254.19.94, for Prod5G - 169.254.19.98 # var.tunnels-remote-1-bgp-peer-ip
+        asn     = 65456 # var.remot-1-bgp-peer-asn
       }
       # Because this is a default routing that advertise all, we just want to set the priority and no other BGP options
       bgp_peer_options                = {
-        advertise_groups    = []
-        advertise_ip_ranges =  {}
-        advertise_mode      = "DEFAULT"
-        route_priority      = 7777
+        advertise_groups    = [] # var.tunnels.route-1.bgp_peer_options.advertised_group
+        advertise_ip_ranges =  {} # var_tunnels_route-1_bgp_peer_options_advertised_ip_ranges
+        advertise_mode      = "DEFAULT" # var_tunnels_route-1_bgp_peer_options.advertised_mode
+        route_priority      = 7777 # var-tunnels-route-1.bgp_peer_options-route_priority
     }
-      bgp_session_range = "169.254.19.93/30" #for Staging5g – 169.254.19.93/30, for Prod5G - 169.254.19.97/30
-      ike_version       = 2
-      vpn_gateway_interface = 1
-      peer_external_gateway_interface = 0
-      shared_secret     = "e4-0BQ3HgG$z" #in Thycotic – will provide when ready
+      bgp_session_range = "169.254.19.93/30" #for Staging5g – 169.254.19.93/30, for Prod5G - 169.254.19.97/30 # var.var-tunnels-remote-1-bgp_session_range
+      ike_version       = 2 # var.ike_version
+      vpn_gateway_interface = 1 #var.tunnels-remote-1-vpn_gateway_interface
+      peer_external_gateway_interface = 0  #var.peer_external_gateway_interface
+      shared_secret     = "e4-0BQ3HgG$z" #in Thycotic – will provide when ready  #var.shared_secret
     }
 
     }
