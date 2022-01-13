@@ -1,7 +1,7 @@
 
 module "staging-us-5g-infrastructure-1-to-hq" {
 
-    source = "terraform-google-modules/vpn/google//modules/vpn_ha"
+    source = "terraform-google-modules/vpn/google//modules/vpn_ha" #The folder path is required because GCP created a submodule HA-VPN rather than a new repo. https://registry.terraform.io/modules/terraform-google-modules/vpn/google/latest/submodules/vpn_ha
     version = "2.1.0"
     ##source    = "github.com/terraform-google-modules/terraform-google-vpn.git//modules/vpn_ha?ref=v2.1.0" ### This one works
     
